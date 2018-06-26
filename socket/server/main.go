@@ -36,6 +36,7 @@ func connHandler(conn net.Conn) {
 		}
 		inStr := strings.TrimSpace(string(buf[0:cnt]))
 		split := strings.Split(inStr, " ")
+		fmt.Println(conn.RemoteAddr())
 		switch split[0] {
 		case "ping":
 			conn.Write([]byte("pong\n"))
